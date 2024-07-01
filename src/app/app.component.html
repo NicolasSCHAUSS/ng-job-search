@@ -1,3 +1,16 @@
-<ng-container *ngFor="let job of this.$jobs | async">
-  <app-job-item [jobItem]="job"/>
-</ng-container>
+<div class="app-title">{{this.title}}</div>
+<div class="app-content">
+  <nav class="job-tab-list">
+    <a class="job-tab-title" 
+        routerLink="/jobs-list" 
+        routerLinkActive="job-tab-active"
+        ariaCurrentWhenActive="page">JOBS
+    </a>
+    <a class="job-tab-title" 
+        routerLink="/favorites-list"
+        routerLinkActive="job-tab-active"
+        ariaCurrentWhenActive="page">FAVORITES
+    </a>
+  </nav>
+  <router-outlet></router-outlet>
+</div>

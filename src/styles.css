@@ -1,6 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/mini.css/dist/mini-dark.min.css";
 
+body {
+    background-color: rgb(176, 176, 176);
+}
 /**
  * <span class="icon-star"></span>
  * <span class="icon-star" style="color: red"></span>

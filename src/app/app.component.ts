@@ -1,28 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { JobItemComponent } from './components/job-item/job-item.component';
+import { Component } from '@angular/core';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { FavoriteListComponent } from './components/favorite-list/favorite-list.component';
+import { JobListComponent } from './components/job-list/job-list.component';
+import { FavoriteService } from './services/favorite/favorite.service';
 import { JobService } from './services/job/job.service';
-import { Observable } from 'rxjs';
-import { JobItem } from './models/jobItem';
-import { AsyncPipe, NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, JobItemComponent, NgFor, AsyncPipe],
+  imports: [RouterOutlet, RouterLink, JobListComponent, FavoriteListComponent, RouterLinkActive],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  providers: [JobService]
+  providers: [JobService, FavoriteService]
 })
-export class AppComponent implements OnInit{
-  title = 'ng-job-search';
-
-  public $jobs! : Observable<Array<JobItem>>
-
-  constructor(private jobService: JobService){}
-
-  ngOnInit(): void {
-    this.$jobs = this.jobService.getJobItems();
-  }
-
+export class AppComponent {
+  title = 'Find your job';
 }

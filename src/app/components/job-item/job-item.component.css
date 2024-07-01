@@ -1,12 +1,5 @@
-.job-item-container {
-  display: flex;
-  justify-content: space-between;
-  background-color: rgb(176, 176, 176);
-  color: black;
-}
-
 .logo-container {
-  max-width: 10vh;
+  max-width: 5vw;
 }
 
 .spacer-container {
@@ -43,5 +36,15 @@
 }
 
 .icon-star {
-  width: 25px;
+  width: 6vh;
+  height: 6vh;
+  background-size: 6vh;
+  background-image: url('/assets/icons/star-outlined.png');
+}
+
+.active {
+  width: 6vh;
+  height: 6vh;
+  background-size: 6vh;
+  background-image: url('/assets/icons/star-filled.png');
 }

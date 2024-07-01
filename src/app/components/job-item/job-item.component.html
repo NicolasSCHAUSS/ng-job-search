@@ -1,26 +1,24 @@
-<div class="job-item-container">
-  <div class="spacer-container">
-    <div class="logo-container">
-      <img src="{{this.jobItem.companyLogo}}"/>
+<div class="spacer-container">
+  <div class="logo-container">
+    <img src="{{this.jobItem.companyLogo}}"/>
+  </div>
+  <div class="text-container">
+    <div class="title-container">
+      {{this.jobItem.title}}
     </div>
-    <div class="text-container">
-      <div class="title-container">
-        {{this.jobItem.title}}
+    <div class="info-container">
+      <div class="company-container">
+        Company: {{this.jobItem.companyName}}
       </div>
-      <div class="info-container">
-        <div class="company-container">
-          Company: {{this.jobItem.companyName}}
-        </div>
-        <div class="reference-container">
-          Reference: {{this.jobItem.reference}}
-        </div>
+      <div class="reference-container">
+        Reference: {{this.jobItem.reference}}
       </div>
     </div>
-    </div>
-  <div class="favorite-container">
-    <img id="star-{{this.jobItem.id}}"
-         class="icon-star" 
-         [src]="isFavorite ? '/assets/icons/favorite.svg' : '/assets/icons/not-favorite.svg'" 
-         (click)="toggleFavorite()"/>
+  </div>
+</div>
+<div class="favorite-container">
+  <div id="star-{{this.jobItem.id}}"
+        [ngClass]="this.isFavorite ? 'active' : 'icon-star'" 
+        (click)="toggleFavorite()">
   </div>
 </div>
