@@ -1,6 +1,10 @@
 .job-item-container {
   display: flex;
   justify-content: space-between;
-  background-color: rgb(176, 176, 176);
-  color: black;
+}
+
+.favorite-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
 }

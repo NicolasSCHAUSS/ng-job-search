@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
-import { AppComponent } from './app.component';
-import { JobListComponent } from './components/job-list/job-list.component';
 import { FavoriteListComponent } from './components/favorite-list/favorite-list.component';
+import { JobDetailsComponent } from './components/job-details/job-details.component';
+import { JobListComponent } from './components/job-list/job-list.component';
 
 export const routes: Routes = [
-  {path:"", redirectTo:'/jobs-list', pathMatch: "full"},
   {path:"jobs-list", component: JobListComponent},
   {path:"favorites-list", component: FavoriteListComponent},
-  {path:"**", component: AppComponent}
+  {path:"jobs/:idJob", component: JobDetailsComponent},
+  {path:"**", redirectTo:'/jobs-list'}
 ];

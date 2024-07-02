@@ -1,6 +1,10 @@
 .job-item-container {
   display: flex;
   justify-content: space-between;
-  background-color: rgb(176, 176, 176);
-  color: black;
+}
+
+.empty-job {
+  padding-top: 5vh;
+  text-align: center;
+  font-weight: 500;
 }

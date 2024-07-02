@@ -3,14 +3,33 @@
   font-weight: 500;
   text-align: center;
   color: black;
+  padding-bottom: 1vh;
 }
 
 .app-content {
   display: block;
   justify-items: center;
-  width: 66.6vw;
+  width: 50vw;
   margin-left: auto;
   margin-right: auto;
+}
+
+nav {
+  margin: unset;
+  background-color: unset;
+  border: unset;
+
+  a:hover {
+    background-color: unset;
+  }
+
+  a:focus {
+    background-color: rgb(48, 57, 68);
+  }
+  
+  a:visited {
+    background-color: unset;
+  }
 }
 
 .job-tab-list {
@@ -21,12 +40,13 @@
 .job-tab-title {
   width: 50vw;
   text-align: center;
-  font-weight: bold;
-  color: white;
+  color: black;
   padding-top: 1.5vh;
   padding-bottom: 1.5vh;
 }
 
 .job-tab-active {
   background-color: rgb(48, 57, 68);
+  color: white;
+  font-weight: bold;
 }

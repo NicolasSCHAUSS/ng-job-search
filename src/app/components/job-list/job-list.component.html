@@ -1,5 +1,13 @@
-<ng-container *ngFor="let job of this.$jobs | async">
-  <app-job-item class="job-item-container" 
-                [jobItem]="job" (isFavoriteEvent)="updateFavorites(job)">
-  </app-job-item>
-</ng-container>
+@for(job of this.$jobs | async ; track job.id){
+  <div class="job-item-container">
+    <app-job-item 
+                  [jobItem]="job">
+    </app-job-item>
+    <div class="favorite-container">
+      <span id="star-{{job.id}}"
+            [ngClass]="isFavoriteJob(job.id) ? 'active' : 'icon-star'"
+            (click)="updateFavorites(job)">
+      </span>
+    </div>
+  </div>
+}

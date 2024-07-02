@@ -1,5 +1,5 @@
 .logo-container {
-  max-width: 5vw;
+  max-width: 3vw;
 }
 
 .spacer-container {
@@ -14,6 +14,7 @@
 
 .title-container {
   font-weight: bold;
+  font-size: larger;
 }
 
 .info-container {
@@ -27,24 +28,4 @@
 
 .reference-container {
   font-weight: lighter;
-}
-
-.favorite-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-}
-
-.icon-star {
-  width: 6vh;
-  height: 6vh;
-  background-size: 6vh;
-  background-image: url('/assets/icons/star-outlined.png');
-}
-
-.active {
-  width: 6vh;
-  height: 6vh;
-  background-size: 6vh;
-  background-image: url('/assets/icons/star-filled.png');
 }

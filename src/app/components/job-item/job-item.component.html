@@ -1,6 +1,6 @@
-<div class="spacer-container">
+<div class="spacer-container" (click)="this.showJobDetails()">
   <div class="logo-container">
-    <img src="{{this.jobItem.companyLogo}}"/>
+    <img [src]="this.jobItem.companyLogo"/>
   </div>
   <div class="text-container">
     <div class="title-container">
@@ -14,11 +14,5 @@
         Reference: {{this.jobItem.reference}}
       </div>
     </div>
-  </div>
-</div>
-<div class="favorite-container">
-  <div id="star-{{this.jobItem.id}}"
-        [ngClass]="this.isFavorite ? 'active' : 'icon-star'" 
-        (click)="toggleFavorite()">
   </div>
 </div>

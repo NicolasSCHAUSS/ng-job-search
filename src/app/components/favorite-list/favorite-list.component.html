@@ -1,5 +1,9 @@
-<ng-container *ngFor="let job of this.favorites">
+@for(job of this.favorites; track job.id){
   <app-job-item class="job-item-container" 
                 [jobItem]="job">
   </app-job-item>
-</ng-container>
+}
+
+@empty {
+  <div class="empty-job">No favorite selected</div>
+}
