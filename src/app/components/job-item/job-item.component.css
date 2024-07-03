@@ -15,6 +15,11 @@
 .title-container {
   font-weight: bold;
   font-size: larger;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
 }
 
 .info-container {

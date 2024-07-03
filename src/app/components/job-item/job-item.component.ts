@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { JobItem } from '../../models/jobItem';
+import { JobItem } from '../../models/job-item.model';
 
 @Component({
   selector: 'app-job-item',

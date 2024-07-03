@@ -1,7 +1,7 @@
 import { AsyncPipe, NgClass } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { JobItem } from '../../models/jobItem';
+import { JobItem } from '../../models/job-item.model';
 import { FavoriteService } from '../../services/favorite/favorite.service';
 import { JobService } from '../../services/job/job.service';
 import { JobItemComponent } from '../job-item/job-item.component';
@@ -13,9 +13,8 @@ import { JobItemComponent } from '../job-item/job-item.component';
   templateUrl: './job-list.component.html',
   styleUrl: './job-list.component.css'
 })
-export class JobListComponent {
+export class JobListComponent implements OnInit{
   
-  @Input()
   public $jobs!: Observable<Array<JobItem>>;
 
   constructor(private jobService: JobService, private favoriteService: FavoriteService){}
@@ -29,6 +28,6 @@ export class JobListComponent {
   }
 
   public isFavoriteJob(jobId: number): boolean {
-    return this.favoriteService.findFavoriteJobId(jobId) > -1 ? true : false ;
+    return this.favoriteService.findFavoriteJobId(jobId) > -1 ;
   }
 }

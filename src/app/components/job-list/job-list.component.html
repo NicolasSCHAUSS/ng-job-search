@@ -5,7 +5,7 @@
     </app-job-item>
     <div class="favorite-container">
       <span id="star-{{job.id}}"
-            [ngClass]="isFavoriteJob(job.id) ? 'active' : 'icon-star'"
+            [ngClass]="{'active': isFavoriteJob(job.id) ,'icon-star':true}"
             (click)="updateFavorites(job)">
       </span>
     </div>

@@ -1,6 +1,5 @@
-import { Injectable, OnInit } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { JobItem } from '../../models/jobItem';
+import { Injectable } from '@angular/core';
+import { JobItem } from '../../models/job-item.model';
 
 @Injectable({
   providedIn: 'root'

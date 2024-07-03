@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { JobItem } from '../../models/jobItem';
+import { Component, OnInit } from '@angular/core';
+import { JobItem } from '../../models/job-item.model';
 import { FavoriteService } from '../../services/favorite/favorite.service';
 import { JobItemComponent } from '../job-item/job-item.component';
 
@@ -8,12 +8,10 @@ import { JobItemComponent } from '../job-item/job-item.component';
   standalone: true,
   imports: [JobItemComponent],
   templateUrl: './favorite-list.component.html',
-  styleUrl: './favorite-list.component.css',
-  providers: [FavoriteService]
+  styleUrl: './favorite-list.component.css'
 })
-export class FavoriteListComponent {
+export class FavoriteListComponent implements OnInit{
 
-  @Input()
   public favorites!: Array<JobItem>;
 
   constructor(private favoriteService: FavoriteService){}

@@ -4,8 +4,8 @@ import { JobDetailsComponent } from './components/job-details/job-details.compon
 import { JobListComponent } from './components/job-list/job-list.component';
 
 export const routes: Routes = [
-  {path:"jobs-list", component: JobListComponent},
-  {path:"favorites-list", component: FavoriteListComponent},
-  {path:"jobs/:idJob", component: JobDetailsComponent},
-  {path:"**", redirectTo:'/jobs-list'}
+  {path:"jobs", component: JobListComponent},
+  {path:"favorites", component: FavoriteListComponent},
+  {path:"jobs/:jobId", component: JobDetailsComponent},
+  {path:"**", redirectTo:'/jobs'}
 ];

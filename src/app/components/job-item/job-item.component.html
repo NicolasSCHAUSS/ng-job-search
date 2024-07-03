@@ -1,9 +1,10 @@
-<div class="spacer-container" (click)="this.showJobDetails()">
+@if(this.jobItem) {
+<div class="spacer-container">
   <div class="logo-container">
-    <img [src]="this.jobItem.companyLogo"/>
+    <img [src]="this.jobItem.companyLogo" alt="company logo"/>
   </div>
   <div class="text-container">
-    <div class="title-container">
+    <div class="title-container" (click)="this.showJobDetails()">
       {{this.jobItem.title}}
     </div>
     <div class="info-container">
@@ -16,3 +17,4 @@
     </div>
   </div>
 </div>
+}

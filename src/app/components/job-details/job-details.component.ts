@@ -1,8 +1,8 @@
 import { DatePipe, Location } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { JobDetails } from '../../models/jobDetails';
+import { JobDetails } from '../../models/job-details.model';
 import { JobService } from '../../services/job/job.service';
 
 @Component({
@@ -20,11 +20,11 @@ export class JobDetailsComponent implements OnInit , OnDestroy{
 
   public jobDetails!: JobDetails;
 
-  constructor(private jobService: JobService, private router: Router, private activatedRoute: ActivatedRoute, private location: Location){};
+  constructor(private jobService: JobService, private activatedRoute: ActivatedRoute, private location: Location){};
 
   public ngOnInit(): void {
     this.$params = this.activatedRoute.params.subscribe(params => {
-      this.$jobDetails = this.jobService.getJobDetails(params["idJob"]).subscribe( j => {
+      this.$jobDetails = this.jobService.getJobDetails(params["jobId"]).subscribe( j => {
         this.jobDetails = j
       });
     });
