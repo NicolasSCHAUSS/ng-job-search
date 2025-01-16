@@ -1,8 +1,9 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { JobService } from './job.service';
 import { JobItem } from '../../models/job-item.model';
 import { JobDetails } from '../../models/job-details.model';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 describe('JobService', () => {
   let service: JobService;
@@ -10,9 +11,9 @@ describe('JobService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [JobService]
-    });
+    imports: [],
+    providers: [JobService, provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
+});
     service = TestBed.inject(JobService);
     httpMock = TestBed.inject(HttpTestingController);
   });
